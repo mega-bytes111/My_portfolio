@@ -10,15 +10,36 @@ const Navbar = () => {
 
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-black/30 backdrop-blur-lg">
 
-      <div className="max-w-6xl mx-auto flex justify-between items-center h-full px-6 py-4 text-white">
+    <nav className="
+      fixed 
+      top-0 
+      left-0 
+      w-full 
+      z-50
+      bg-black/50
+      backdrop-blur-lg
+      border-b
+      border-white/10
+    ">
+
+      <div className="
+        max-w-6xl 
+        mx-auto 
+        flex 
+        justify-between 
+        items-center 
+        h-20
+        px-6 
+        text-white
+      ">
 
 
         {/* 🔥 Logo */}
         <h1 className="font-bold text-xl cursor-pointer">
           Arpan.dev
         </h1>
+
 
 
         {/* 🔗 Links */}
@@ -34,6 +55,7 @@ const Navbar = () => {
           </li>
 
 
+
           {/* Projects */}
           <li
             onClick={() => scrollToSection("projects")}
@@ -43,6 +65,7 @@ const Navbar = () => {
           </li>
 
 
+
           {/* Coding Profiles */}
           <li
             onClick={() => scrollToSection("coding")}
@@ -50,6 +73,7 @@ const Navbar = () => {
           >
             Coding
           </li>
+
 
 
           {/* Contact */}
@@ -66,8 +90,11 @@ const Navbar = () => {
 
       </div>
 
+
     </nav>
+
   );
 };
+
 
 export default Navbar;
