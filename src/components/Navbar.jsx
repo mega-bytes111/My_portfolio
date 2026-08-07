@@ -25,6 +25,8 @@ const Navbar = () => {
       top-0
       left-0
       w-full
+      max-w-[100vw]
+      overflow-hidden
       z-50
       bg-black/50
       backdrop-blur-lg
@@ -35,9 +37,10 @@ const Navbar = () => {
 
       <div className="
         w-full
+        max-w-[100vw]
         flex
-        justify-between
         items-center
+        justify-between
         h-16
         md:h-20
         px-4
@@ -72,7 +75,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("about")}
-            className="hover:text-cyan-400 transition"
+            className="hover:text-cyan-400 transition duration-300"
           >
             About
           </li>
@@ -80,7 +83,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("projects")}
-            className="hover:text-cyan-400 transition"
+            className="hover:text-cyan-400 transition duration-300"
           >
             Projects
           </li>
@@ -88,7 +91,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("coding")}
-            className="hover:text-cyan-400 transition"
+            className="hover:text-cyan-400 transition duration-300"
           >
             Coding
           </li>
@@ -96,7 +99,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("contact")}
-            className="hover:text-cyan-400 transition"
+            className="hover:text-cyan-400 transition duration-300"
           >
             Contact
           </li>
@@ -114,8 +117,12 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           className="
             md:hidden
-            text-2xl
+            ml-auto
+            text-3xl
             p-2
+            flex
+            items-center
+            justify-center
             cursor-pointer
           "
         >
@@ -126,6 +133,7 @@ const Navbar = () => {
 
 
       </div>
+
 
 
 
@@ -150,19 +158,25 @@ const Navbar = () => {
 
 
         <ul className="
+          w-full
           flex
           flex-col
           items-center
           gap-5
-          py-5
+          py-6
           bg-black/90
+          backdrop-blur-lg
           text-white
         ">
 
 
           <li
             onClick={() => scrollToSection("about")}
-            className="cursor-pointer hover:text-cyan-400"
+            className="
+              cursor-pointer
+              hover:text-cyan-400
+              transition
+            "
           >
             About
           </li>
@@ -170,7 +184,11 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("projects")}
-            className="cursor-pointer hover:text-cyan-400"
+            className="
+              cursor-pointer
+              hover:text-cyan-400
+              transition
+            "
           >
             Projects
           </li>
@@ -178,7 +196,11 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("coding")}
-            className="cursor-pointer hover:text-cyan-400"
+            className="
+              cursor-pointer
+              hover:text-cyan-400
+              transition
+            "
           >
             Coding
           </li>
@@ -186,7 +208,11 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("contact")}
-            className="cursor-pointer hover:text-cyan-400"
+            className="
+              cursor-pointer
+              hover:text-cyan-400
+              transition
+            "
           >
             Contact
           </li>
