@@ -27,29 +27,53 @@ const Navbar = () => {
         max-w-6xl 
         mx-auto 
         flex 
-        justify-between 
-        items-center 
+        items-center
+        justify-between
         h-20
-        px-6 
+        px-4
+        sm:px-6
         text-white
+        gap-6
       ">
 
 
         {/* 🔥 Logo */}
-        <h1 className="font-bold text-xl cursor-pointer">
+        <h1 className="
+          font-bold 
+          text-lg
+          sm:text-xl
+          cursor-pointer
+          whitespace-nowrap
+          flex-shrink-0
+        ">
           Arpan.dev
         </h1>
 
 
 
+
         {/* 🔗 Links */}
-        <ul className="flex gap-8 cursor-pointer">
+        <ul className="
+          flex 
+          gap-5
+          sm:gap-8
+          overflow-x-auto
+          cursor-pointer
+          no-scrollbar
+        ">
 
 
           {/* About */}
           <li
             onClick={() => scrollToSection("about")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="
+              text-sm
+              sm:text-base
+              whitespace-nowrap
+              hover:text-cyan-400 
+              transition 
+              duration-300
+            "
           >
             About
           </li>
@@ -59,27 +83,50 @@ const Navbar = () => {
           {/* Projects */}
           <li
             onClick={() => scrollToSection("projects")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="
+              text-sm
+              sm:text-base
+              whitespace-nowrap
+              hover:text-cyan-400 
+              transition 
+              duration-300
+            "
           >
             Projects
           </li>
 
 
 
-          {/* Coding Profiles */}
+
+          {/* Coding */}
           <li
             onClick={() => scrollToSection("coding")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="
+              text-sm
+              sm:text-base
+              whitespace-nowrap
+              hover:text-cyan-400 
+              transition 
+              duration-300
+            "
           >
             Coding
           </li>
 
 
 
+
           {/* Contact */}
           <li
             onClick={() => scrollToSection("contact")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="
+              text-sm
+              sm:text-base
+              whitespace-nowrap
+              hover:text-cyan-400 
+              transition 
+              duration-300
+            "
           >
             Contact
           </li>
@@ -95,6 +142,5 @@ const Navbar = () => {
 
   );
 };
-
 
 export default Navbar;
