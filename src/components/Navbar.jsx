@@ -26,7 +26,6 @@ const Navbar = () => {
       left-0
       w-full
       z-50
-      overflow-x-hidden
       bg-black/50
       backdrop-blur-lg
       border-b
@@ -35,22 +34,23 @@ const Navbar = () => {
 
 
       <div className="
-        max-w-6xl
-        mx-auto
+        w-full
         flex
         justify-between
         items-center
-        h-20
-        px-5
-        sm:px-6
+        h-16
+        md:h-20
+        px-4
+        md:px-6
         text-white
       ">
 
 
-        {/* 🔥 Logo */}
+        {/* Logo */}
         <h1 className="
           font-bold
-          text-xl
+          text-lg
+          md:text-xl
           cursor-pointer
           whitespace-nowrap
         ">
@@ -61,7 +61,7 @@ const Navbar = () => {
 
 
 
-        {/* 💻 Desktop Menu */}
+        {/* Desktop Menu */}
         <ul className="
           hidden
           md:flex
@@ -72,7 +72,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("about")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="hover:text-cyan-400 transition"
           >
             About
           </li>
@@ -80,7 +80,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("projects")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="hover:text-cyan-400 transition"
           >
             Projects
           </li>
@@ -88,7 +88,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("coding")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="hover:text-cyan-400 transition"
           >
             Coding
           </li>
@@ -96,7 +96,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("contact")}
-            className="hover:text-cyan-400 transition duration-300"
+            className="hover:text-cyan-400 transition"
           >
             Contact
           </li>
@@ -109,12 +109,13 @@ const Navbar = () => {
 
 
 
-        {/* 📱 Hamburger */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="
             md:hidden
-            text-3xl
+            text-2xl
+            p-2
             cursor-pointer
           "
         >
@@ -130,14 +131,15 @@ const Navbar = () => {
 
 
 
-      {/* 📱 Mobile Menu */}
+
+      {/* Mobile Dropdown */}
       <div
         className={`
           md:hidden
           w-full
-          overflow-hidden
           transition-all
           duration-500
+          overflow-hidden
           ${
             isOpen
             ? "max-h-80 opacity-100"
@@ -146,22 +148,21 @@ const Navbar = () => {
         `}
       >
 
+
         <ul className="
-          w-full
           flex
           flex-col
           items-center
-          gap-6
-          py-6
+          gap-5
+          py-5
           bg-black/90
-          backdrop-blur-lg
           text-white
         ">
 
 
           <li
             onClick={() => scrollToSection("about")}
-            className="hover:text-cyan-400 cursor-pointer transition"
+            className="cursor-pointer hover:text-cyan-400"
           >
             About
           </li>
@@ -169,7 +170,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("projects")}
-            className="hover:text-cyan-400 cursor-pointer transition"
+            className="cursor-pointer hover:text-cyan-400"
           >
             Projects
           </li>
@@ -177,7 +178,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("coding")}
-            className="hover:text-cyan-400 cursor-pointer transition"
+            className="cursor-pointer hover:text-cyan-400"
           >
             Coding
           </li>
@@ -185,7 +186,7 @@ const Navbar = () => {
 
           <li
             onClick={() => scrollToSection("contact")}
-            className="hover:text-cyan-400 cursor-pointer transition"
+            className="cursor-pointer hover:text-cyan-400"
           >
             Contact
           </li>
