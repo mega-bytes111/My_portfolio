@@ -23,17 +23,16 @@ const Navbar = () => {
       border-white/10
     ">
 
+
       <div className="
         max-w-6xl 
         mx-auto 
         flex 
         items-center
-        justify-between
         h-20
         px-4
         sm:px-6
         text-white
-        gap-6
       ">
 
 
@@ -45,6 +44,7 @@ const Navbar = () => {
           cursor-pointer
           whitespace-nowrap
           flex-shrink-0
+          mr-6
         ">
           Arpan.dev
         </h1>
@@ -52,87 +52,99 @@ const Navbar = () => {
 
 
 
-        {/* 🔗 Links */}
-        <ul className="
-          flex 
-          gap-5
-          sm:gap-8
-          overflow-x-auto
-          cursor-pointer
-          no-scrollbar
+        {/* 🔗 Scrollable Links Container */}
+        <div className="
+          flex-1
+          overflow-hidden
         ">
 
-
-          {/* About */}
-          <li
-            onClick={() => scrollToSection("about")}
-            className="
-              text-sm
-              sm:text-base
-              whitespace-nowrap
-              hover:text-cyan-400 
-              transition 
-              duration-300
-            "
-          >
-            About
-          </li>
+          <ul className="
+            flex 
+            gap-5
+            sm:gap-8
+            overflow-x-auto
+            cursor-pointer
+            no-scrollbar
+            pb-1
+          ">
 
 
-
-          {/* Projects */}
-          <li
-            onClick={() => scrollToSection("projects")}
-            className="
-              text-sm
-              sm:text-base
-              whitespace-nowrap
-              hover:text-cyan-400 
-              transition 
-              duration-300
-            "
-          >
-            Projects
-          </li>
+            {/* About */}
+            <li
+              onClick={() => scrollToSection("about")}
+              className="
+                text-sm
+                sm:text-base
+                whitespace-nowrap
+                hover:text-cyan-400 
+                transition 
+                duration-300
+              "
+            >
+              About
+            </li>
 
 
 
 
-          {/* Coding */}
-          <li
-            onClick={() => scrollToSection("coding")}
-            className="
-              text-sm
-              sm:text-base
-              whitespace-nowrap
-              hover:text-cyan-400 
-              transition 
-              duration-300
-            "
-          >
-            Coding
-          </li>
+            {/* Projects */}
+            <li
+              onClick={() => scrollToSection("projects")}
+              className="
+                text-sm
+                sm:text-base
+                whitespace-nowrap
+                hover:text-cyan-400 
+                transition 
+                duration-300
+              "
+            >
+              Projects
+            </li>
 
 
 
 
-          {/* Contact */}
-          <li
-            onClick={() => scrollToSection("contact")}
-            className="
-              text-sm
-              sm:text-base
-              whitespace-nowrap
-              hover:text-cyan-400 
-              transition 
-              duration-300
-            "
-          >
-            Contact
-          </li>
+
+            {/* Coding */}
+            <li
+              onClick={() => scrollToSection("coding")}
+              className="
+                text-sm
+                sm:text-base
+                whitespace-nowrap
+                hover:text-cyan-400 
+                transition 
+                duration-300
+              "
+            >
+              Coding
+            </li>
 
 
-        </ul>
+
+
+
+            {/* Contact */}
+            <li
+              onClick={() => scrollToSection("contact")}
+              className="
+                text-sm
+                sm:text-base
+                whitespace-nowrap
+                hover:text-cyan-400 
+                transition 
+                duration-300
+              "
+            >
+              Contact
+            </li>
+
+
+          </ul>
+
+
+        </div>
 
 
       </div>
@@ -142,5 +154,6 @@ const Navbar = () => {
 
   );
 };
+
 
 export default Navbar;
