@@ -1,11 +1,20 @@
+import { useState } from "react";
+
 const Navbar = () => {
 
+  const [isOpen, setIsOpen] = useState(false);
+
+
   const scrollToSection = (id) => {
+
+    setIsOpen(false);
+
     setTimeout(() => {
       document.getElementById(id)?.scrollIntoView({
         behavior: "smooth",
       });
     }, 400);
+
   };
 
 
@@ -28,10 +37,10 @@ const Navbar = () => {
         max-w-6xl 
         mx-auto 
         flex 
+        justify-between
         items-center
         h-20
-        px-4
-        sm:px-6
+        px-6
         text-white
       ">
 
@@ -39,12 +48,8 @@ const Navbar = () => {
         {/* 🔥 Logo */}
         <h1 className="
           font-bold 
-          text-lg
-          sm:text-xl
+          text-xl 
           cursor-pointer
-          whitespace-nowrap
-          flex-shrink-0
-          mr-6
         ">
           Arpan.dev
         </h1>
@@ -52,99 +57,134 @@ const Navbar = () => {
 
 
 
-        {/* 🔗 Scrollable Links Container */}
-        <div className="
-          flex-1
-          overflow-hidden
+
+        {/* 💻 Desktop Menu */}
+        <ul className="
+          hidden
+          md:flex
+          gap-8
+          cursor-pointer
         ">
 
-          <ul className="
-            flex 
-            gap-5
-            sm:gap-8
-            overflow-x-auto
-            cursor-pointer
-            no-scrollbar
-            pb-1
-          ">
+
+          <li
+            onClick={() => scrollToSection("about")}
+            className="hover:text-cyan-400 transition duration-300"
+          >
+            About
+          </li>
 
 
-            {/* About */}
-            <li
-              onClick={() => scrollToSection("about")}
-              className="
-                text-sm
-                sm:text-base
-                whitespace-nowrap
-                hover:text-cyan-400 
-                transition 
-                duration-300
-              "
-            >
-              About
-            </li>
+          <li
+            onClick={() => scrollToSection("projects")}
+            className="hover:text-cyan-400 transition duration-300"
+          >
+            Projects
+          </li>
 
 
+          <li
+            onClick={() => scrollToSection("coding")}
+            className="hover:text-cyan-400 transition duration-300"
+          >
+            Coding
+          </li>
 
 
-            {/* Projects */}
-            <li
-              onClick={() => scrollToSection("projects")}
-              className="
-                text-sm
-                sm:text-base
-                whitespace-nowrap
-                hover:text-cyan-400 
-                transition 
-                duration-300
-              "
-            >
-              Projects
-            </li>
+          <li
+            onClick={() => scrollToSection("contact")}
+            className="hover:text-cyan-400 transition duration-300"
+          >
+            Contact
+          </li>
+
+
+        </ul>
 
 
 
 
 
-            {/* Coding */}
-            <li
-              onClick={() => scrollToSection("coding")}
-              className="
-                text-sm
-                sm:text-base
-                whitespace-nowrap
-                hover:text-cyan-400 
-                transition 
-                duration-300
-              "
-            >
-              Coding
-            </li>
+        {/* 📱 Mobile Hamburger */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="
+            md:hidden
+            text-3xl
+            focus:outline-none
+          "
+        >
+
+          {isOpen ? "✕" : "☰"}
+
+        </button>
+
+
+      </div>
 
 
 
 
 
-            {/* Contact */}
-            <li
-              onClick={() => scrollToSection("contact")}
-              className="
-                text-sm
-                sm:text-base
-                whitespace-nowrap
-                hover:text-cyan-400 
-                transition 
-                duration-300
-              "
-            >
-              Contact
-            </li>
+      {/* 📱 Mobile Menu */}
+      <div
+        className={`
+          md:hidden
+          overflow-hidden
+          transition-all
+          duration-500
+          ${isOpen ? "max-h-60 opacity-100" : "max-h-0 opacity-0"}
+        `}
+      >
+
+        <ul className="
+          flex
+          flex-col
+          items-center
+          gap-6
+          py-6
+          text-white
+          bg-black/80
+          backdrop-blur-lg
+        ">
 
 
-          </ul>
+          <li
+            onClick={() => scrollToSection("about")}
+            className="hover:text-cyan-400 cursor-pointer transition"
+          >
+            About
+          </li>
 
 
-        </div>
+
+          <li
+            onClick={() => scrollToSection("projects")}
+            className="hover:text-cyan-400 cursor-pointer transition"
+          >
+            Projects
+          </li>
+
+
+
+          <li
+            onClick={() => scrollToSection("coding")}
+            className="hover:text-cyan-400 cursor-pointer transition"
+          >
+            Coding
+          </li>
+
+
+
+          <li
+            onClick={() => scrollToSection("contact")}
+            className="hover:text-cyan-400 cursor-pointer transition"
+          >
+            Contact
+          </li>
+
+
+        </ul>
 
 
       </div>
@@ -154,6 +194,5 @@ const Navbar = () => {
 
   );
 };
-
 
 export default Navbar;
